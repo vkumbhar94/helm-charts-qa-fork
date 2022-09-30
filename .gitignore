@@ -1,0 +1,7 @@
+node_modules
+charts/**/charts
+charts/**/Chart.lock
+.cr-release-packages
+.github/
+.idea
+package-lock.json
