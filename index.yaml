@@ -3,6 +3,21 @@ entries:
   argus:
   - apiVersion: v2
     appVersion: v8.2.0-rc2
+    created: "2022-09-30T09:14:36.236328173Z"
+    description: Automated Kubernetes monitoring
+    digest: 4ea5fe80fa01765d6f38fe1ae7110378504a441d9ef3490371df5b42d46b1f9a
+    home: https://vkumbhar94.github.io/helm-charts-qa-fork
+    icon: https://vkumbhar94.github.io/helm-charts-qa-fork/lm_logo.png
+    kubeVersion: '>= 1.16.0-0'
+    maintainers:
+    - email: argus@logicmonitor.com
+      name: LogicMonitor
+    name: argus
+    urls:
+    - https://github.com/vkumbhar94/helm-charts-qa-fork/releases/download/argus-2.2.0-rt03/argus-2.2.0-rt03.tgz
+    version: 2.2.0-rt03
+  - apiVersion: v2
+    appVersion: v8.2.0-rc2
     created: "2022-09-30T09:07:08.04567008Z"
     description: Automated Kubernetes monitoring
     digest: 25da52dd7f29a35e1427464ca0e151a319d5b765da924faef85bcdb309626942
@@ -16,4 +31,20 @@ entries:
     urls:
     - https://github.com/vkumbhar94/helm-charts-qa-fork/releases/download/argus-2.2.0-rt02/argus-2.2.0-rt02.tgz
     version: 2.2.0-rt02
-generated: "2022-09-30T09:07:08.04568338Z"
+  collectorset-controller:
+  - apiVersion: v2
+    appVersion: v4.1.0-rc4
+    created: "2022-09-30T09:14:36.31392665Z"
+    description: Automated collector management
+    digest: 9ee2b662486b1bddba620b09b64745d769e8d3ef11e5ee3355d64998f3bcca84
+    home: https://vkumbhar94.github.io/helm-charts-qa-fork
+    icon: https://vkumbhar94.github.io/helm-charts-qa-fork/lm_logo.png
+    kubeVersion: '>= 1.16.0-0'
+    maintainers:
+    - email: argus@logicmonitor.com
+      name: LogicMonitor
+    name: collectorset-controller
+    urls:
+    - https://github.com/vkumbhar94/helm-charts-qa-fork/releases/download/collectorset-controller-1.1.0-rt01/collectorset-controller-1.1.0-rt01.tgz
+    version: 1.1.0-rt01
+generated: "2022-09-30T09:14:36.31394435Z"
