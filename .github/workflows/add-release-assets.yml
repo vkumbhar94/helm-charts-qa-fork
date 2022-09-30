@@ -71,6 +71,7 @@ jobs:
           fetch-depth: 0
           path: terraform-lm-lmc
           ref: main
+          token: ${{ secrets.CHART_RELEASE_TOKEN }}
       - name: Pull Charts and Generate UI Template
         if: ${{ steps.get_chart.outputs.chartname == 'lm-container' }}
         run: |
