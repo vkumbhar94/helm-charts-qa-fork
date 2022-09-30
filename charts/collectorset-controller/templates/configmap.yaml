@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "collectorset-controller.fullname" . }}
+  namespace: {{ template "collectorset-controller.namespace" . }}
+  labels:
+    {{- include "collectorset-controller.labels" . | nindent 4}}
+  annotations:
+    helm-chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    helm-revision: "{{ .Release.Revision }}"
+    ## keep value false as string, spinnaker's limitation, otherwise spinnaker fails to cast boolean to string
+    strategy.spinnaker.io/versioned: "false"
+    {{- include "collectorset-controller.annotations" . | nindent 4}}
+data:
+  debug-info: |
+    capabilities:
+      {{- toYaml .Capabilities | nindent 6 }}
+    release:
+      {{- toYaml .Release | nindent 6 }}
+    values:
+      {{- toYaml .Values | nindent 6 }}
+  config.yaml: |
+    log:
+      {{- toYaml .Values.log | nindent 6 }}
+    {{- if .Values.proxy.url }}
+    proxy:
+      url: {{ .Values.proxy.url }}
+    {{ else if .Values.global.proxy.url }}
+    proxy:
+      url: {{ .Values.global.proxy.url }}
+    {{- end }}
+    ignoreSSL: {{ default false .Values.ignoreSSL }}
+    collectorServiceAccountName: {{ include "collectorset-controller.serviceAccountName" . }}-collector
+    secretName: {{ include "collectorset-controller.fullname" . }}
