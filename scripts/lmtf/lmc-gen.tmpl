@@ -1,0 +1,22 @@
+
+argus:  
+  %{ if lmc.argus.clusterTreeParentID != null }
+  clusterTreeParentID: ${lmc.argus.clusterTreeParentID}
+  %{ endif }
+  clusterName:   ${lmc.argus.clusterName}
+%{ if lmc.collectorset-controller != null }
+collectorset-controller:
+  ${yamlencode(lmc.collectorset-controller)}
+%{ endif }
+%{ if lmc.global != null }
+global:  
+  %{ if lmc.global.account != null }
+  account: ${lmc.global.account}
+  %{ endif }
+  %{ if lmc.global.accessID != null }
+  accessID: ${lmc.global.accessID}
+  %{ endif }
+  %{ if lmc.global.accessKey != null }
+  accessKey: ${lmc.global.accessKey}
+  %{ endif }
+%{ endif }

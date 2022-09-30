@@ -1,0 +1,22 @@
+
+argus:  
+  filters:
+    ${yamlencode(lmc.argus.filters)}
+  %{ if lmc.argus.image != null }
+  image:  
+    %{ if lmc.argus.image.registry != null }
+    registry: ${lmc.argus.image.registry}
+    %{ endif }
+    repository:   ${lmc.argus.image.repository}
+    pullPolicy:   ${lmc.argus.image.pullPolicy}
+    %{ if lmc.argus.image.tag != null }
+    tag: ${lmc.argus.image.tag}
+    %{ endif }
+  %{ endif }
+  %{ if lmc.argus.enabled != null }
+  enabled: ${lmc.argus.enabled}
+  %{ endif }
+  %{ if lmc.argus.selfMonitor != null }
+  selfMonitor:
+    ${yamlencode(lmc.argus.selfMonitor)}
+  %{ endif }

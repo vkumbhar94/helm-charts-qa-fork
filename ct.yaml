@@ -1,0 +1,5 @@
+target-branch: main
+chart-repos:
+  - prometheus=https://prometheus-community.github.io/helm-charts
+  - logicmonitor-qa=https://vkumbhar94.github.io/helm-charts-qa-fork
+helm-extra-args: --timeout 10m
